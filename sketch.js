@@ -34,8 +34,8 @@ function setup() {
 	boxSide1=createSprite(boxBottom.x+100, 615, 20,100);
 	boxSide1.shapeColor=color("red")
 
-	boxSide1=createSprite(boxBottom.x-100, 615, 20,100);
-	boxSide1.shapeColor=color("red")
+	boxSide2=createSprite(boxBottom.x-100, 615, 20,100);
+	boxSide2.shapeColor=color("red")
 
 	engine = Engine.create();
 	world = engine.world;
@@ -79,6 +79,17 @@ if (keyCode === DOWN_ARROW) {
 	Matter.Body.setStatic( packageBody,false);
     
   }
+  else if (keyCode === LEFT_ARROW) {
+	helicopterSprite.x=helicopterSprite.x-20;
+	translation={x:-20,y:0}
+	Matter.Body.translate(packageBody, translation)
+ }
+
+	else if (keyCode === RIGHT_ARROW) { 
+		helicopterSprite.x=helicopterSprite.x+20;
+		translation={x:20,y:0} 
+		Matter.Body.translate(packageBody, translation) 
+	}
 }
 
 
